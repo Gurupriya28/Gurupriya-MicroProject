@@ -1,0 +1,46 @@
+{
+  "bookings": [
+    {
+      "roomId": 101,
+      "roomType": "U Shape",
+      "bookedby": "Aman",
+      "bookedon": "18/12/2024 at 8.30 am",
+      "duration": "2 days",
+      "amount": 4000,
+      "id": "a0aa"
+    },
+    {
+      "id": "102",
+      "empName": "",
+      "roomType": "boardroom",
+      "bookedby": "Rohan",
+      "bookedon": "6/8/24 on 10.00 am",
+      "duration": "4 hours",
+      "amount": "6000"
+    },
+    {
+      "id": "103",
+      "roomType": "hollow",
+      "bookedby": "Kishore",
+      "bookedon": "24/8/2024 8.50 am",
+      "duration": "3 days",
+      "amount": "5000"
+    },
+    {
+      "id": "105",
+      "roomType": "auditorium",
+      "bookedby": "Meena",
+      "bookedon": "5/8/24 at 1.00 pm",
+      "duration": "1 days",
+      "amount": "7000"
+    },
+    {
+      "id": "107",
+      "roomType": "banquet",
+      "bookedby": "Amal",
+      "bookedon": "7/8/24 on 4.00 pm",
+      "duration": "3 days",
+      "amount": "6000"
+    }
+  ]
+}

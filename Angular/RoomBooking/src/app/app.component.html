@@ -1,0 +1,133 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    
+</head>
+
+<body>
+    <h1>Meeting Room Booking System</h1>
+    <div class="container form-container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <form #myForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="roomId">Room Id</label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="roomId" 
+                                       #roomId="ngModel" ngModel
+                                       required
+                                       pattern="[0-9]+" />
+                                <div *ngIf="roomId.touched">
+                                    <div *ngIf="roomId.errors?.['required']">
+                                        <b class="text-danger">Room Id Required</b>
+                                    </div>
+                                    <div *ngIf="roomId.errors?.['pattern']">
+                                        <b class="text-danger">Invalid Room Id</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="roomType">Room Type</label>
+                                <select class="form-control" name="roomType"  #roomType="ngModel" ngModel required>
+                                    <option value="">Select Room Type</option>
+                                    <option value="boardroom">Boardroom Style</option>
+                                    <option value="hollow">Hollow Square Style</option>
+                                    <option value="u-shape">U-Shape Style</option>
+                                    <option value="auditorium">Auditorium Style</option>
+                                    <option value="banquet">Banquet Style</option>
+                                </select>
+                                <div *ngIf="roomType.touched">
+                                    <div *ngIf="roomType.errors?.['required']">
+                                        <b class="text-pink">Room Type Required</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookedby">Booked By</label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="bookedby" 
+                                       #bookedby="ngModel" ngModel required/>
+                                <div *ngIf="bookedby.touched">
+                                    <div *ngIf="bookedby.errors?.['required']">
+                                        <b class="text-pink">Person name required</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookedon">Booked On</label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="bookedon" 
+                                       #bookedon="ngModel" ngModel required/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="duration">Duration</label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="duration" 
+                                       #duration="ngModel" ngModel required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="amount">Amount</label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="amount" 
+                                       #amount="ngModel" ngModel required/>
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-success" (click)="insertRoom(myForm.value)">
+                                    Insert 
+                                </button>&nbsp;&nbsp;
+                                <button class="btn btn-primary" (click)="updateRoom(myForm.value)">
+                                    Update 
+                                </button>&nbsp;&nbsp;
+                                <button class="btn btn-danger" (click)="deleteRoom(myForm.value)">
+                                    Delete 
+                                </button>&nbsp;&nbsp;
+                                <button class="btn btn-warning" (click)="findRoom(myForm.value)">
+                                    Find 
+                                </button>&nbsp;&nbsp;
+                                <button class="btn btn-info" (click)="findAllRoom()">
+                                    Find All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h3>{{result}}</h3>
+    <div class="container" *ngIf="flag">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Room Id</th>
+                    <th>Room Type</th>
+                    <th>Booked By</th>
+                    <th>Booked On</th>
+                    <th>Duration</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let room of roomArr">
+                    <td>{{room.id}}</td>
+                    <td>{{room.roomType}}</td>
+                    <td>{{room.bookedby}}</td>
+                    <td>{{room.bookedon}}</td>
+                    <td>{{room.duration}}</td>
+                    <td>{{room.amount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

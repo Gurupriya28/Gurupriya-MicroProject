@@ -1,0 +1,50 @@
+body {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+ 
+}
+.form-container {
+    margin-top: 20px;
+    background-color: #0b99a3ad;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(2, 92, 85, 0.363);
+    
+}
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #343a40;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.btn-group {
+    text-align: center;
+    margin-top: 20px;
+}
+.btn-group .btn {
+    margin: 5px;
+}
+table {
+    margin-top: 30px;
+}
+table th, table td {
+    text-align: center;
+    vertical-align: middle;
+}
+.thead-dark th {
+    background-color: #af0d87;
+    color: #ffffff;
+}
+.alert {
+    margin-top: 20px;
+}
+select{
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
